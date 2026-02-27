@@ -1,0 +1,22 @@
+ملاحظة: يجب إضافة صور خلفية للمطعم بأحجام متعددة (responsive images)
+
+الملفات المطلوبة:
+1. hero-bg-1920.webp - للشاشات الكبيرة (1920px width, quality 80-85%)
+2. hero-bg-1280.webp - للشاشات المتوسطة (1280px width, quality 80-85%)
+3. hero-bg-768.webp - للأجهزة اللوحية (768px width, quality 80-85%)
+4. hero-bg-480.webp - للهواتف المحمولة (480px width, quality 80-85%)
+5. hero-bg.webp - الصورة الافتراضية (fallback) (1920px width, quality 80-85%)
+
+المواصفات:
+- الصيغة: WebP (للأداء الأفضل)
+- الجودة: 80-85%
+- المحتوى: صورة تعبر عن أجواء المطعم أو المشويات
+- loading="eager" (الصورة above the fold)
+
+كيفية إنشاء الصور:
+يمكنك استخدام أدوات مثل:
+- ImageMagick: convert hero-original.jpg -resize 1920x -quality 85 hero-bg-1920.webp
+- Online tools: squoosh.app, cloudconvert.com
+- Photoshop/GIMP: Export as WebP with quality 80-85%
+
+ملاحظة: الكود الحالي يستخدم <picture> element مع srcset للصور responsive
