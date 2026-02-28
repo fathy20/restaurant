@@ -21,16 +21,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-djafa-black/90 backdrop-blur-md py-4 shadow-lg shadow-black/50" : "bg-transparent py-6"}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-djafa-black/95 backdrop-blur-md py-4 shadow-lg shadow-black/50" : "bg-djafa-black/80 backdrop-blur-sm py-6"}`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#" className="flex flex-col items-center group">
-          <span className="font-serif text-2xl md:text-3xl font-bold text-djafa-yellow tracking-wider group-hover:text-white transition-colors">
-            Djafa
-          </span>
-          <span className="font-serif text-sm text-white tracking-widest">
-            الضيافة
-          </span>
+        <a href="#" className="flex items-center gap-3 group">
+          <img 
+            src={`${import.meta.env.BASE_URL}logo.png`}
+            alt="شعار مطعم الضيافة" 
+            className="h-12 md:h-14 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop Nav */}
@@ -46,7 +45,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="px-6 py-2 bg-djafa-yellow text-djafa-black font-semibold rounded-md hover:bg-white transition-colors"
+            className="px-6 py-2 bg-djafa-yellow text-djafa-black font-semibold rounded-md hover:bg-djafa-red hover:text-white transition-colors"
           >
             اتصل بنا
           </a>
@@ -68,7 +67,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-djafa-charcoal border-t border-white/10 py-6 px-6 flex flex-col space-y-4 md:hidden"
+            className="absolute top-full left-0 w-full bg-djafa-charcoal border-t border-white/10 py-6 px-6 flex flex-col space-y-4 md:hidden shadow-lg"
           >
             {navLinks.map((link) => (
               <a
@@ -83,7 +82,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="px-6 py-2 bg-djafa-yellow text-djafa-black font-semibold rounded-md hover:bg-white transition-colors text-center"
+              className="px-6 py-2 bg-djafa-yellow text-djafa-black font-semibold rounded-md hover:bg-djafa-red hover:text-white transition-colors text-center"
             >
               اتصل بنا
             </a>

@@ -87,7 +87,7 @@ export default function Menu() {
             target="_blank"
             rel="noopener noreferrer"
             download="قائمة-مطعم-الضيافة.pdf"
-            className="inline-block px-6 md:px-8 py-3 md:py-4 text-sm md:text-base border border-white/20 rounded-[12px] text-white hover:bg-white hover:text-djafa-black transition-all duration-300"
+            className="inline-block px-6 md:px-8 py-3 md:py-4 text-sm md:text-base border-2 border-djafa-yellow rounded-[12px] text-white hover:bg-djafa-yellow hover:text-djafa-black transition-all duration-300 font-semibold"
           >
             عرض المنيو الكامل
           </a>

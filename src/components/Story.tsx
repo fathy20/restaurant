@@ -19,7 +19,7 @@ export default function Story() {
                 قصتنا
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6 md:mb-8 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6 md:mb-8 leading-tight text-white">
               إرث من{" "}
               <span className="text-djafa-yellow italic">النكهات</span> والتقاليد
             </h2>
@@ -32,7 +32,7 @@ export default function Story() {
 
             <div className="flex items-center gap-4 md:gap-6">
               <div className="text-center">
-                <span className="block text-2xl md:text-3xl font-serif text-white">
+                <span className="block text-2xl md:text-3xl font-serif text-white font-bold">
                   +15
                 </span>
                 <span className="text-xs text-gray-500 uppercase tracking-wider">
@@ -41,7 +41,7 @@ export default function Story() {
               </div>
               <div className="w-[1px] h-8 md:h-10 bg-white/10"></div>
               <div className="text-center">
-                <span className="block text-2xl md:text-3xl font-serif text-white">
+                <span className="block text-2xl md:text-3xl font-serif text-white font-bold">
                   100%
                 </span>
                 <span className="text-xs text-gray-500 uppercase tracking-wider">

@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#2c1810' }}>
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-djafa-black">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -12,7 +12,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Dark Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-djafa-black/80 via-djafa-black/60 to-djafa-black/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90"></div>
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
@@ -38,7 +38,7 @@ export default function Hero() {
               href={`${import.meta.env.BASE_URL}menu.pdf`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 bg-djafa-yellow text-djafa-black font-semibold rounded-[12px] hover:bg-djafa-red hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(234,179,8,0.3)] hover:shadow-[0_0_20px_rgba(127,29,29,0.5)] text-lg"
+              className="w-full sm:w-auto px-8 py-4 bg-djafa-yellow text-djafa-black font-bold rounded-[12px] hover:bg-djafa-red hover:text-white transition-all duration-300 shadow-lg text-lg"
             >
               منيو
             </a>

@@ -5,11 +5,13 @@
   --font-serif: "Cairo", "Tajawal", Arial, sans-serif;
   --font-sans: "Tajawal", "Cairo", Arial, sans-serif;
 
-  --color-djafa-yellow: #eab308;
-  --color-djafa-red: #7f1d1d;
+  --color-djafa-yellow: #FFD700;
+  --color-djafa-red: #E31E24;
   --color-djafa-beige: #d6d3d1;
   --color-djafa-charcoal: #171717;
   --color-djafa-black: #0a0a0a;
+  --color-djafa-text: #f5f5f5;
+  --color-djafa-gray: #9ca3af;
 }
 
 @layer base {
@@ -19,7 +21,7 @@
   body {
     font-family: var(--font-sans);
     background-color: var(--color-djafa-black);
-    color: #f5f5f5;
+    color: var(--color-djafa-text);
   }
   h1,
   h2,
