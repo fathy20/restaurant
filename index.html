@@ -1,25 +1,1103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>مطعم الضيافة - أفضل مشويات وأكل مصري أصيل</title>
-    <meta name="description" content="مطعم الضيافة - أفضل مشويات وأكل مصري أصيل. تشكيلة فاخرة من الكباب والكفتة والمقبلات الطازجة في أجواء عائلية راقية." />
-    <meta name="keywords" content="مطعم مشويات, أكل مصري أصيل, كباب وكفتة, مطاعم عائلية" />
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="مطعم الضيافة - وجهتك الأولى لأفضل مشويات وأكل بيتي" />
-    <meta property="og:description" content="تشكيلة فاخرة من المشويات والمقبلات الطازجة والحلويات الشرقية في أجواء عائلية راقية" />
-    <meta property="og:image" content="/og-image.jpg" />
-    <meta property="og:url" content="https://djafa-restaurant.com" />
-    <meta property="og:type" content="website" />
-    <script type="module" crossorigin src="/restaurant/assets/index-CtMWM7pr.js"></script>
-    <link rel="modulepreload" crossorigin href="/restaurant/assets/motion-BFHL_HwO.js">
-    <link rel="modulepreload" crossorigin href="/restaurant/assets/vendor-DX6ssDsR.js">
-    <link rel="stylesheet" crossorigin href="/restaurant/assets/index-DkFOpQSZ.css">
-  </head>
-  <body class="bg-[#0A0A0A] text-white">
-    <div id="root"></div>
-  </body>
-</html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مطعم الضيافة - DJAFA | أفضل برجر وفراخ</title>
+<meta name="description" content="مطعم الضيافة - أفضل وجبات البرجر والفراخ بأجود المكونات في أجواء عائلية راقية">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS RESET & VARIABLES ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+:root {
+  --red: #D62828;
+  --red-dark: #a81f1f;
+  --yellow: #F4D35E;
+  --yellow-light: #f7e08a;
+  --black: #111111;
+  --black-deep: #0a0a0a;
+  --white: #ffffff;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-400: #a3a3a3;
+  --gray-600: #525252;
+  --gray-800: #262626;
+  --gray-900: #171717;
+  --font-ar: "Cairo", sans-serif;
+  --font-en: "Poppins", sans-serif;
+  --shadow-card: 0 8px 32px rgba(0,0,0,0.4);
+  --shadow-hover: 0 16px 48px rgba(214,40,40,0.2);
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-ar);
+  background: var(--black-deep);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 4px; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 12px 0;
+  transition: var(--transition);
+  background: transparent;
+}
+.navbar.scrolled {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  padding: 8px 0;
+}
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo img {
+  height: 55px;
+  transition: var(--transition);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+.navbar.scrolled .nav-logo img { height: 45px; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  position: relative;
+  padding: 4px 0;
+  transition: var(--transition);
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background: var(--yellow);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover { color: var(--yellow); }
+.nav-links a:hover::after { width: 100%; }
+
+.btn-order-nav {
+  background: var(--yellow);
+  color: var(--black);
+  padding: 10px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-family: var(--font-ar);
+  font-size: 15px;
+  text-decoration: none;
+  transition: var(--transition);
+  border: 2px solid var(--yellow);
+  cursor: pointer;
+}
+.btn-order-nav:hover {
+  background: transparent;
+  color: var(--yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(244,211,94,0.3);
+}
+
+/* Mobile Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--white);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: rgba(10,10,10,0.98);
+  backdrop-filter: blur(20px);
+  padding: 100px 40px 40px;
+  transition: right 0.4s ease;
+  z-index: 999;
+  flex-direction: column;
+  gap: 24px;
+}
+.mobile-menu.open { right: 0; }
+.mobile-menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: var(--transition);
+}
+.mobile-menu a:hover { color: var(--yellow); padding-right: 12px; }
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 998;
+}
+.mobile-overlay.open { display: block; }
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: flex; }
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("/restaurant/assets/hero-bg-KJRKInnY.jpg") center/cover no-repeat;
+  transform: scale(1.05);
+  transition: transform 8s ease;
+}
+.hero:hover .hero-bg { transform: scale(1); }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10,10,10,0.7) 0%,
+    rgba(10,10,10,0.5) 40%,
+    rgba(10,10,10,0.8) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 800px;
+  animation: fadeUp 1s ease forwards;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(214,40,40,0.2);
+  border: 1px solid rgba(214,40,40,0.4);
+  color: var(--yellow);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  animation: fadeIn 1s ease 0.3s forwards;
+  opacity: 0;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--white) 0%, var(--gray-200) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero h1 span {
+  background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--gray-400);
+  margin-bottom: 40px;
+  animation: fadeIn 1s ease 0.5s forwards;
+  opacity: 0;
+  max-width: 600px;
+  margin-inline: auto;
+}
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeIn 1s ease 0.7s forwards;
+  opacity: 0;
+}
+.btn-primary {
+  background: var(--red);
+  color: var(--white);
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--font-ar);
+  text-decoration: none;
+  transition: var(--transition);
+  border: 2px solid var(--red);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary:hover {
+  background: var(--red-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(214,40,40,0.4);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--font-ar);
+  text-decoration: none;
+  transition: var(--transition);
+  border: 2px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-secondary:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+  transform: translateY(-3px);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: float 2s ease infinite;
+}
+.scroll-indicator svg {
+  width: 28px;
+  height: 28px;
+  color: var(--yellow);
+  opacity: 0.6;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 100px 24px;
+}
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.section-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.section-header h2 span { color: var(--yellow); }
+.section-header p {
+  color: var(--gray-400);
+  font-size: 17px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.section-line {
+  width: 60px;
+  height: 4px;
+  background: var(--red);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+/* ===== ABOUT ===== */
+.about-section {
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(214,40,40,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.about-image {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.about-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 24px;
+  transition: transform 0.6s ease;
+}
+.about-image:hover img { transform: scale(1.03); }
+.about-image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: var(--yellow);
+  border-radius: 24px 0 24px 0;
+  opacity: 0.15;
+}
+.about-text h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+.about-text h2 span { color: var(--yellow); }
+.about-text p {
+  color: var(--gray-400);
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+.about-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.about-feature-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(214,40,40,0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.about-feature span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-image img { height: 320px; }
+}
+
+/* ===== REVIEWS ===== */
+.reviews-section { background: var(--black-deep); }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+.review-card {
+  background: var(--gray-900);
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: var(--transition);
+  position: relative;
+}
+.review-card:hover {
+  border-color: rgba(244,211,94,0.2);
+  transform: translateY(-4px);
+}
+.review-card::before {
+  content: "\201D";
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  font-size: 60px;
+  color: var(--red);
+  opacity: 0.2;
+  font-family: serif;
+  line-height: 1;
+}
+.review-stars {
+  color: var(--yellow);
+  font-size: 18px;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+.review-text {
+  color: var(--gray-200);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.review-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 18px;
+}
+.review-info strong {
+  font-size: 15px;
+  display: block;
+  margin-bottom: 2px;
+}
+.review-info span {
+  font-size: 13px;
+  color: var(--gray-400);
+}
+
+/* ===== OFFERS ===== */
+.offers-section {
+  background: var(--black);
+  position: relative;
+}
+.offers-banner {
+  background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+  border-radius: 24px;
+  padding: 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.offers-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(255,255,255,0.02) 20px,
+    rgba(255,255,255,0.02) 40px
+  );
+}
+.offers-banner h2 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  position: relative;
+}
+.offers-banner h2 span { color: var(--yellow); }
+.offers-banner p {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 32px;
+  position: relative;
+}
+.offers-banner .btn-primary {
+  background: var(--yellow);
+  color: var(--black);
+  border-color: var(--yellow);
+  position: relative;
+}
+.offers-banner .btn-primary:hover {
+  background: var(--white);
+  border-color: var(--white);
+  box-shadow: 0 12px 32px rgba(244,211,94,0.3);
+}
+
+/* ===== CONTACT ===== */
+.contact-section { background: var(--black-deep); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-group { position: relative; }
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--gray-900);
+  border: 2px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  color: var(--white);
+  font-family: var(--font-ar);
+  font-size: 15px;
+  transition: var(--transition);
+  outline: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--gray-600);
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 4px rgba(214,40,40,0.15);
+}
+.form-group textarea {
+  height: 140px;
+  resize: none;
+}
+.btn-submit {
+  background: var(--red);
+  color: var(--white);
+  padding: 16px 40px;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-ar);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  align-self: flex-start;
+}
+.btn-submit:hover {
+  background: var(--red-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(214,40,40,0.3);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.contact-info-card {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  background: var(--gray-900);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: var(--transition);
+}
+.contact-info-card:hover {
+  border-color: rgba(214,40,40,0.2);
+  transform: translateX(4px);
+}
+.contact-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(214,40,40,0.15);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--red);
+  font-size: 22px;
+}
+.contact-info-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.contact-info-card p {
+  color: var(--gray-400);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--black);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 60px 24px 24px;
+}
+.footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+.footer-brand img { height: 50px; margin-bottom: 16px; }
+.footer-brand p {
+  color: var(--gray-400);
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 320px;
+}
+.footer-links h4,
+.footer-social h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--yellow);
+}
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a {
+  color: var(--gray-400);
+  text-decoration: none;
+  font-size: 14px;
+  transition: var(--transition);
+}
+.footer-links a:hover { color: var(--white); padding-right: 4px; }
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+.social-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 18px;
+  transition: var(--transition);
+}
+.social-icon:hover {
+  background: var(--red);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  color: var(--gray-600);
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2rem; }
+  .offers-banner { padding: 40px 24px; }
+}
+
+/* ===== GRAIN OVERLAY ===== */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">
+      <img src="/restaurant/assets/logo-JkUxkP1e.png" alt="مطعم الضيافة">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero">الرئيسية</a></li>
+      <li><a href="حلويات_منزلية_بالشكولاتة.pdf" target="_blank" rel="noopener">المنيو</a></li>
+      <li><a href="#about">من نحن</a></li>
+      <li><a href="#offers">العروض</a></li>
+      <li><a href="#contact">تواصل معنا</a></li>
+      <li><a href="tel:+201234567890" class="btn-order-nav">🛒 اطلب الآن</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero" onclick="closeMobile()">الرئيسية</a>
+  <a href="حلويات_منزلية_بالشكولاتة.pdf" target="_blank" rel="noopener" onclick="closeMobile()">المنيو</a>
+  <a href="#about" onclick="closeMobile()">من نحن</a>
+  <a href="#offers" onclick="closeMobile()">العروض</a>
+  <a href="#contact" onclick="closeMobile()">تواصل معنا</a>
+  <a href="tel:+201234567890" class="btn-order-nav" style="text-align:center;margin-top:16px;" onclick="closeMobile()">🛒 اطلب الآن</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🔥 الطعم الأصيل من أول لقمة</div>
+    <h1>أهلاً بكم في مطعم <span>الضيافة</span></h1>
+    <p>أفضل وجبات البرجر والفراخ المشوية بأجود المكونات الطازجة.. طعم بيتي في أجواء عائلية راقية</p>
+    <div class="hero-btns">
+      <a href="tel:+201234567890" class="btn-primary">🛒 اطلب الآن</a>
+      <a href="حلويات_منزلية_بالشكولاتة.pdf" target="_blank" rel="noopener" class="btn-secondary">📋 شوف المنيو</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section about-section" id="about">
+  <div class="section-container">
+    <div class="about-grid">
+      <div class="about-image animate-on-scroll">
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=600&fit=crop" alt="مطعم الضيافة" loading="lazy">
+      </div>
+      <div class="about-text animate-on-scroll">
+        <h2>من <span>نحن</span></h2>
+        <p>مطعم الضيافة هو وجهتك الأولى لأفضل وجبات البرجر والفراخ المشوية في أجواء عائلية راقية.</p>
+        <p>نحن نفخر بتقديم أطباق شهية محضرة بأجود المكونات الطازجة، مع الحفاظ على الطعم الأصيل والجودة العالية.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">✓</div>
+            <span>مكونات طازجة يومياً</span>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">✓</div>
+            <span>أجواء عائلية راقية</span>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">✓</div>
+            <span>خدمة سريعة ومميزة</span>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">✓</div>
+            <span>أسعار مناسبة للجميع</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="section reviews-section">
+  <div class="section-container">
+    <div class="section-header animate-on-scroll">
+      <h2>آراء <span>عملائنا</span></h2>
+      <p>نفخر بثقة عملائنا وتقييماتهم الإيجابية</p>
+      <div class="section-line"></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card animate-on-scroll delay-1">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">أفضل برجر جربته في حياتي! اللحم طازج والصوص رهيب. المكان نظيف والخدمة ممتازة.</p>
+        <div class="review-author">
+          <div class="review-avatar">أ</div>
+          <div class="review-info">
+            <strong>أحمد محمد</strong>
+            <span>عميل دائم</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card animate-on-scroll delay-2">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">الفراخ المشوية عندهم تحفة! متبلة بطريقة مميزة والأجواء العائلية رائعة.</p>
+        <div class="review-author">
+          <div class="review-avatar">س</div>
+          <div class="review-info">
+            <strong>سارة علي</strong>
+            <span>زائرة جديدة</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card animate-on-scroll delay-3">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">مطعم رائع للعائلات. الأكل لذيذ والأسعار معقولة. أنصح الجميع بزيارته.</p>
+        <div class="review-author">
+          <div class="review-avatar">م</div>
+          <div class="review-info">
+            <strong>محمود حسن</strong>
+            <span>عميل مميز</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFFERS ===== -->
+<section class="section offers-section" id="offers">
+  <div class="section-container">
+    <div class="offers-banner animate-on-scroll">
+      <h2>عروض <span>خاصة</span></h2>
+      <p>استمتع بأفضل العروض والخصومات على وجباتنا المميزة</p>
+      <a href="tel:+201234567890" class="btn-primary">🛒 اطلب الآن</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section contact-section" id="contact">
+  <div class="section-container">
+    <div class="section-header animate-on-scroll">
+      <h2>تواصل <span>معنا</span></h2>
+      <p>نسعد بخدمتكم والرد على استفساراتكم</p>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-form animate-on-scroll">
+        <div class="form-group">
+          <input type="text" placeholder="الاسم">
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="البريد الإلكتروني">
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="رقم الهاتف">
+        </div>
+        <div class="form-group">
+          <textarea placeholder="رسالتك"></textarea>
+        </div>
+        <button class="btn-submit">إرسال الرسالة</button>
+      </div>
+
+      <div class="contact-info animate-on-scroll">
+        <div class="contact-info-card">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>اتصل بنا</h4>
+            <p><a href="tel:+201234567890" style="color: var(--gray-400); text-decoration: none;">+20 123 456 7890</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>العنوان</h4>
+            <p>القاهرة، مصر</p>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-icon">⏰</div>
+          <div>
+            <h4>ساعات العمل</h4>
+            <p>يومياً من 12 ظهراً - 12 منتصف الليل</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/restaurant/assets/logo-JkUxkP1e.png" alt="مطعم الضيافة">
+      <p>مطعم الضيافة - وجهتك الأولى لأفضل وجبات البرجر والفراخ المشوية في أجواء عائلية راقية</p>
+    </div>
+    <div class="footer-links">
+      <h4>روابط سريعة</h4>
+      <ul>
+        <li><a href="#hero">الرئيسية</a></li>
+        <li><a href="حلويات_منزلية_بالشكولاتة.pdf" target="_blank" rel="noopener">المنيو</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#offers">العروض</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <h4>تابعنا</h4>
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 مطعم الضيافة. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Mobile menu toggle
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileOverlay = document.getElementById('mobileOverlay');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('open');
+  mobileOverlay.classList.toggle('open');
+});
+
+mobileOverlay.addEventListener('click', closeMobile);
+
+function closeMobile() {
+  hamburger.classList.remove('active');
+  mobileMenu.classList.remove('open');
+  mobileOverlay.classList.remove('open');
+}
+
+// Animate on scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
