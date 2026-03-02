@@ -35,7 +35,7 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <a
-              href={`${import.meta.env.BASE_URL}menu.pdf`}
+              href={`${import.meta.env.BASE_URL}حلويات_منزلية_بالشكولاتة.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-djafa-yellow text-djafa-black font-bold rounded-[12px] hover:bg-djafa-red hover:text-white transition-all duration-300 shadow-lg text-lg"

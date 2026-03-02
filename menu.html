@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>قائمة الطعام - مطعم الضيافة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --red: #D62828;
+  --red-dark: #a81f1f;
+  --yellow: #F4D35E;
+  --yellow-light: #f7e08a;
+  --black: #111111;
+  --black-deep: #0a0a0a;
+  --white: #ffffff;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-400: #a3a3a3;
+  --gray-600: #525252;
+  --gray-800: #262626;
+  --gray-900: #171717;
+  --font-ar: "Cairo", sans-serif;
+  --shadow-card: 0 8px 32px rgba(0,0,0,0.4);
+  --shadow-hover: 0 16px 48px rgba(214,40,40,0.2);
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-ar);
+  background: var(--black-deep);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.7;
+  padding: 40px 24px;
+}
+
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.menu-header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--white) 0%, var(--gray-200) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.menu-header h1 span {
+  background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.menu-header p {
+  color: var(--gray-400);
+  font-size: 17px;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--red);
+  color: var(--white);
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+  border: 2px solid var(--red);
+}
+
+.back-btn:hover {
+  background: var(--red-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(214,40,40,0.4);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  margin-bottom: 60px;
+}
+
+.menu-card {
+  background: var(--gray-900);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: var(--transition);
+  position: relative;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(214,40,40,0.3);
+}
+
+.menu-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.menu-card:hover .menu-card-img { transform: scale(1.08); }
+
+.menu-card-img-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.menu-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--red);
+  color: var(--white);
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.menu-card-body {
+  padding: 24px;
+}
+
+.menu-card-body h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.menu-card-body .desc {
+  color: var(--gray-400);
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.menu-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-family: var(--font-ar);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--yellow);
+}
+
+.price small {
+  font-size: 13px;
+  color: var(--gray-400);
+  font-weight: 400;
+  margin-right: 4px;
+}
+
+.btn-add {
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-family: var(--font-ar);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-add:hover {
+  background: var(--yellow);
+  color: var(--black);
+  transform: scale(1.05);
+}
+
+.section-line {
+  width: 60px;
+  height: 4px;
+  background: var(--red);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .menu-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="menu-container">
+  <div class="menu-header">
+    <h1>قائمة <span>الطعام</span></h1>
+    <p>تشكيلة مميزة من ألذ الوجبات المحضّرة بعناية وحب</p>
+    <div class="section-line"></div>
+    <br><br>
+    <a href="index.html" class="back-btn">← رجوع للرئيسية</a>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-card">
+      <div class="menu-card-img-wrapper">
+        <img class="menu-card-img" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=400&fit=crop" alt="برجر كلاسيك" loading="lazy">
+        <span class="menu-card-badge">الأكثر طلبًا</span>
+      </div>
+      <div class="menu-card-body">
+        <h3>برجر كلاسيك</h3>
+        <p class="desc">لحم بقري طازج 150 جرام مع جبنة شيدر وصوص سري خاص</p>
+        <div class="menu-card-footer">
+          <div class="price">85 <small>ج.م</small></div>
+          <button class="btn-add">أضف للطلب</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-card-img-wrapper">
+        <img class="menu-card-img" src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=600&h=400&fit=crop" alt="برجر دوبل" loading="lazy">
+        <span class="menu-card-badge">مميز</span>
+      </div>
+      <div class="menu-card-body">
+        <h3>برجر دوبل</h3>
+        <p class="desc">قطعتين لحم بقري مع جبنة مزدوجة وخس وطماطم طازجة</p>
+        <div class="menu-card-footer">
+          <div class="price">120 <small>ج.م</small></div>
+          <button class="btn-add">أضف للطلب</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-card-img-wrapper">
+        <img class="menu-card-img" src="https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?w=600&h=400&fit=crop" alt="برجر سبايسي" loading="lazy">
+      </div>
+      <div class="menu-card-body">
+        <h3>برجر سبايسي 🌶️</h3>
+        <p class="desc">برجر حار بالهالبينو وصوص الشطة الحارة لعشاق التحدي</p>
+        <div class="menu-card-footer">
+          <div class="price">95 <small>ج.م</small></div>
+          <button class="btn-add">أضف للطلب</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-card-img-wrapper">
+        <img class="menu-card-img" src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=600&h=400&fit=crop" alt="ساندوتش فراخ" loading="lazy">
+        <span class="menu-card-badge">جديد</span>
+      </div>
+      <div class="menu-card-body">
+        <h3>ساندوتش فراخ</h3>
+        <p class="desc">صدور فراخ مشوية متبلة بالأعشاب مع صوص الثوم الكريمي</p>
+        <div class="menu-card-footer">
+          <div class="price">90 <small>ج.م</small></div>
+          <button class="btn-add">أضف للطلب</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-card-img-wrapper">
+        <img class="menu-card-img" src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&h=400&fit=crop" alt="وجبة عائلية" loading="lazy">
+        <span class="menu-card-badge">عرض خاص</span>
+      </div>
+      <div class="menu-card-body">
+        <h3>وجبة عائلية</h3>
+        <p class="desc">4 ساندوتشات + بطاطس كبير + 4 مشروبات + كول سلو</p>
+        <div class="menu-card-footer">
+          <div class="price">350 <small>ج.م</small></div>
+          <button class="btn-add">أضف للطلب</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-card-img-wrapper">
+        <img class="menu-card-img" src="https://images.unsplash.com/photo-1630384060421-cb20aeb56983?w=600&h=400&fit=crop" alt="بطاطس + مشروب" loading="lazy">
+      </div>
+      <div class="menu-card-body">
+        <h3>بطاطس + مشروب</h3>
+        <p class="desc">بطاطس مقرمشة مع صوصات متنوعة ومشروب بارد من اختيارك</p>
+        <div class="menu-card-footer">
+          <div class="price">45 <small>ج.م</small></div>
+          <button class="btn-add">أضف للطلب</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
