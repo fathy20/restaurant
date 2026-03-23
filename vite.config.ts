@@ -29,10 +29,7 @@ export default defineConfig(({mode}) => {
       // Optimize chunk size
       rollupOptions: {
         output: {
-          manualChunks: {
-            vendor: ['react', 'react-dom'],
-            motion: ['motion/react'],
-          },
+          manualChunks: undefined,
         },
       },
     },
