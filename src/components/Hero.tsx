@@ -5,54 +5,54 @@ export default function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-djafa-black">
       <div className="absolute inset-0 z-0">
-        {/* Food background image */}
         <img
-          src={`${import.meta.env.BASE_URL}food-bg.jpeg`}
-          alt="مطعم الضيافة - أفضل مشويات وأكل بيتي في طرابلس"
+          src={`${import.meta.env.BASE_URL}bg-logo.png`}
+          alt="مطعم الضيافة"
           loading="eager"
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ filter: "brightness(0.8) contrast(1.1)" }}
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/90" />
-        {/* Logo watermark centered */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-          <img
-            src={`${import.meta.env.BASE_URL}bg-logo.png`}
-            alt=""
-            className="w-[600px] max-w-[80vw] object-contain"
-          />
-        </div>
+        {/* Premium gradient overlay */}
+        <div className="absolute inset-0" style={{
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.75) 100%)",
+          backdropFilter: "blur(3px)",
+        }} />
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="inline-block border border-djafa-yellow/50 text-djafa-yellow text-xs tracking-[0.25em] uppercase px-5 py-2 rounded-full mb-6 bg-djafa-yellow/10 backdrop-blur-sm">
-            أصالة المذاق منذ 1994
+            className="inline-block border border-djafa-yellow/60 text-djafa-yellow text-xs tracking-[0.25em] uppercase px-5 py-2 rounded-full mb-6 bg-djafa-yellow/10 backdrop-blur-md shadow-lg shadow-djafa-yellow/10">
+            ✨ أصالة المذاق منذ 1994
           </motion.span>
 
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-4 leading-tight">
-            مطعم <span className="text-djafa-yellow">الضيافة</span>
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-4 leading-tight"
+            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.8)" }}>
+            مطعم <span className="text-djafa-yellow" style={{ textShadow: "0 0 30px rgba(255,215,0,0.4)" }}>الضيافة</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-4 font-light">
+          <p className="text-xl md:text-2xl text-white/90 mb-4 font-light"
+            style={{ textShadow: "0 2px 10px rgba(0,0,0,0.7)" }}>
             وجهتك الأولى لأفضل مشويات وأكل بيتي
           </p>
 
-          <p className="text-base md:text-lg text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-white/70 mb-10 leading-relaxed max-w-2xl mx-auto"
+            style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}>
             من قلب طرابلس، نقدم لكم تجربة طعام أصيلة تجمع بين الجودة العالية والطعم الذي لا يُنسى منذ أكثر من ثلاثة عقود
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* Glassmorphism CTA box */}
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
+            className="inline-flex flex-col sm:flex-row items-center justify-center gap-4 p-2 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl">
             <a href={`${import.meta.env.BASE_URL}حلويات_منزلية_بالشكولاتة.pdf`} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 px-8 py-4 bg-djafa-yellow text-djafa-black font-bold rounded-xl hover:bg-yellow-400 transition-all duration-300 shadow-lg shadow-djafa-yellow/30 text-base">
+              className="flex items-center gap-2 px-8 py-3.5 bg-djafa-yellow text-djafa-black font-bold rounded-xl hover:bg-yellow-300 transition-all duration-300 shadow-lg shadow-djafa-yellow/40 text-base">
               <FileText size={18} /> شاهد المنيو
             </a>
             <a href="tel:+218910000000"
-              className="flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white/40 text-white font-bold rounded-xl hover:border-djafa-yellow hover:text-djafa-yellow transition-all duration-300 text-base backdrop-blur-sm">
+              className="flex items-center gap-2 px-8 py-3.5 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 hover:border-djafa-yellow/50 transition-all duration-300 text-base">
               <Phone size={18} /> اتصل بنا
             </a>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 
