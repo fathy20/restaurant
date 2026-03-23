@@ -5,13 +5,23 @@ export default function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-djafa-black">
       <div className="absolute inset-0 z-0">
+        {/* Food background image */}
         <img
-          src={`${import.meta.env.BASE_URL}0.jpg`}
+          src={`${import.meta.env.BASE_URL}food-bg.jpeg`}
           alt="مطعم الضيافة - أفضل مشويات وأكل بيتي في طرابلس"
           loading="eager"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/85" />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/90" />
+        {/* Logo watermark centered */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+          <img
+            src={`${import.meta.env.BASE_URL}bg-logo.png`}
+            alt=""
+            className="w-[600px] max-w-[80vw] object-contain"
+          />
+        </div>
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">

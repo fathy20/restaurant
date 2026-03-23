@@ -94,7 +94,7 @@ export default function About() {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-square">
               <img
-                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&fit=crop"
+                src={`${import.meta.env.BASE_URL}food-bg.jpeg`}
                 alt="مطعم الضيافة - أجواء داخلية"
                 loading="lazy"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
