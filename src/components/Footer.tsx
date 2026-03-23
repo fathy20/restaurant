@@ -1,118 +1,81 @@
-import {
-  MapPin,
-  Phone,
-  Clock,
-  Instagram,
-  Facebook,
-  MessageCircle,
-} from "lucide-react";
+import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 
-export default function Footer() {
+const TikTokIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/>
+  </svg>
+);
+
+interface FooterProps {
+  onFeedbackOpen: () => void;
+}
+
+export default function Footer({ onFeedbackOpen }: FooterProps) {
   return (
-    <footer
-      id="contact"
-      className="bg-gray-900 pt-16 md:pt-20 pb-8 md:pb-10 border-t border-gray-800"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-16">
-          {/* Map - Now first for RTL */}
-          <div className="h-64 md:h-80 lg:h-full min-h-[250px] md:min-h-[300px] rounded-2xl overflow-hidden border border-gray-700 grayscale hover:grayscale-0 transition-all duration-500 lg:order-2">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968459391!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1621530000000!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              title="موقع مطعم الضيافة"
-            ></iframe>
+    <footer className="bg-djafa-charcoal border-t border-white/6 pt-14 pb-8">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+          {/* Brand */}
+          <div>
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="مطعم الضيافة" className="h-14 w-auto object-contain mb-4" />
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+              أصالة المذاق منذ 1994. نقدم أفضل المشويات والوجبات السريعة في طرابلس، ليبيا.
+            </p>
+            <div className="flex items-center gap-3 mt-5">
+              {[
+                { icon: Facebook, href: "https://www.facebook.com/share/17ge5mGFTU/?mibextid=wwXIfr", label: "Facebook" },
+                { icon: Instagram, href: "https://www.instagram.com/aldyafa.ly?igsh=bGlmbDZienFid3po", label: "Instagram" },
+                { icon: TikTokIcon, href: "https://www.tiktok.com/@aldyafa.ly?_r=1&_t=ZS-94n00DFHMjC", label: "TikTok" },
+              ].map((s) => (
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
+                  className="w-9 h-9 rounded-full bg-white/6 flex items-center justify-center text-gray-400 hover:bg-djafa-yellow hover:text-djafa-black transition-all duration-300">
+                  <s.icon />
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Contact Info - Now second for RTL */}
-          <div className="lg:order-1">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-white mb-6 md:mb-8">
-              اتصل بنا
-            </h2>
+          {/* Quick links */}
+          <div>
+            <h4 className="text-djafa-yellow text-sm font-bold mb-4 tracking-wider">روابط سريعة</h4>
+            <ul className="space-y-2.5">
+              {[
+                { label: "الرئيسية", href: "#" },
+                { label: "من نحن", href: "#about" },
+                { label: "فروعنا", href: "#branches" },
+                { label: "تواصل معنا", href: "#contact" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="text-gray-400 text-sm hover:text-djafa-yellow transition-colors">{link.label}</a>
+                </li>
+              ))}
+              <li>
+                <a href={`${import.meta.env.BASE_URL}حلويات_منزلية_بالشكولاتة.pdf`} target="_blank" rel="noopener noreferrer"
+                  className="text-gray-400 text-sm hover:text-djafa-yellow transition-colors">المنيو</a>
+              </li>
+            </ul>
+          </div>
 
-            <div className="space-y-5 md:space-y-6">
-              <div className="flex items-start gap-3 md:gap-4">
-                <MapPin className="text-djafa-yellow shrink-0 mt-1" size={20} />
-                <div>
-                  <h4 className="text-white font-medium mb-1 text-sm md:text-base">الموقع</h4>
-                  <p className="text-gray-400 font-light text-sm md:text-base">
-                    شارع الفخامة 123، حي الطهي
-                    <br />
-                    المدينة، المحافظة 12345
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 md:gap-4">
-                <Phone className="text-djafa-yellow shrink-0 mt-1" size={20} />
-                <div>
-                  <h4 className="text-white font-medium mb-1 text-sm md:text-base">الحجوزات</h4>
-                  <p className="text-gray-400 font-light text-sm md:text-base" dir="ltr">
-                    +1 (555) 123-4567
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 md:gap-4">
-                <Clock className="text-djafa-yellow shrink-0 mt-1" size={20} />
-                <div>
-                  <h4 className="text-white font-medium mb-1 text-sm md:text-base">ساعات العمل</h4>
-                  <p className="text-gray-400 font-light text-sm md:text-base">
-                    الإثنين - الخميس: 11:00 صباحاً - 11:00 مساءً
-                    <br />
-                    الجمعة - الأحد: 11:00 صباحاً - 1:00 صباحاً
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 md:mt-10">
-              <a
-                href="https://wa.me/15551234567"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base bg-[#25D366] text-white font-medium rounded-[12px] hover:bg-[#1DA851] transition-colors"
-              >
-                <MessageCircle size={18} />
-                اطلب عبر واتساب
+          {/* Contact + Feedback */}
+          <div>
+            <h4 className="text-djafa-yellow text-sm font-bold mb-4 tracking-wider">تواصل معنا</h4>
+            <div className="space-y-3 mb-5">
+              <a href="mailto:info@aldiyafa.ly" className="flex items-center gap-2 text-gray-400 text-sm hover:text-djafa-yellow transition-colors">
+                <Mail size={14} /> info@aldiyafa.ly
+              </a>
+              <a href="tel:+218910000000" className="flex items-center gap-2 text-gray-400 text-sm hover:text-djafa-yellow transition-colors" dir="ltr">
+                <Phone size={14} /> +218 91 000 0000
               </a>
             </div>
+            <button onClick={onFeedbackOpen}
+              className="flex items-center gap-2 px-4 py-2.5 border border-djafa-yellow/40 text-djafa-yellow text-sm font-semibold rounded-lg hover:bg-djafa-yellow hover:text-djafa-black transition-all duration-300">
+              💬 أضف ملاحظتك
+            </button>
           </div>
         </div>
 
-        {/* Bottom Footer */}
-        <div className="pt-6 md:pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex flex-col items-center md:items-start">
-            <img 
-              src={`${import.meta.env.BASE_URL}logo.png`}
-              alt="شعار مطعم الضيافة" 
-              className="h-10 w-auto object-contain mb-2"
-            />
-            <span className="text-xs text-gray-500 mt-1 text-center md:text-start">
-              © {new Date().getFullYear()} مطعم الضيافة. جميع الحقوق محفوظة.
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3 md:gap-4">
-            <a
-              href="#"
-              className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-djafa-yellow hover:text-gray-900 transition-all"
-              aria-label="انستغرام"
-            >
-              <Instagram size={16} />
-            </a>
-            <a
-              href="#"
-              className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-djafa-yellow hover:text-gray-900 transition-all"
-              aria-label="فيسبوك"
-            >
-              <Facebook size={16} />
-            </a>
-          </div>
+        <div className="pt-6 border-t border-white/6 text-center">
+          <p className="text-gray-600 text-xs">© {new Date().getFullYear()} مطعم الضيافة. جميع الحقوق محفوظة.</p>
         </div>
       </div>
     </footer>
