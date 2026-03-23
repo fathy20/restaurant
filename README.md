@@ -1,20 +1,32 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# مطاعم الضيافة — الموقع الرسمي
 
-# Run and deploy your AI Studio app
+موقع مطاعم الضيافة، طرابلس، ليبيا. مبني بـ React + Vite + TailwindCSS.
 
-This contains everything you need to run your app locally.
+🌐 **الموقع:** [fathy20.github.io/restaurant](https://fathy20.github.io/restaurant/)
 
-View your app in AI Studio: https://ai.studio/apps/bc598e20-b3e3-4c69-8fef-3f3ea9def4b7
+---
 
-## Run Locally
+## التقنيات المستخدمة
 
-**Prerequisites:**  Node.js
+- React 19 + TypeScript
+- Vite
+- TailwindCSS v4
+- Framer Motion
+- Lucide Icons
 
+## تشغيل المشروع محلياً
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm install
+npm run dev
+```
+
+## النشر على GitHub Pages
+
+```bash
+npm run deploy
+```
+
+---
+
+صنعه بكل محبة — **fathy20** 🔥
