@@ -86,7 +86,7 @@ export default function Branches() {
           <p className="text-gray-400 max-w-xl mx-auto text-sm">
             نستقبلكم يومياً من <span className="text-djafa-yellow font-semibold">12:00 ظهراً</span> حتى <span className="text-djafa-yellow font-semibold">2:00 صباحاً</span> في فروعنا المنتشرة عبر طرابلس
           </p>
-          <div className="w-16 h-0.5 bg-djafa-red mx-auto mt-4" />
+
         </motion.div>
 
         {/* Branch selector tabs — mobile dropdown style on small screens */}

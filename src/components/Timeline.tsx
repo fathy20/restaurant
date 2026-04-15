@@ -78,7 +78,7 @@ export default function Timeline() {
             {events.map((event, i) => {
               const isRight = i % 2 === 0;
               return (
-                <motion.div key={event.year}
+                <motion.div key={event.title}
                   initial={{ opacity: 0, x: isRight ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-60px" }}

@@ -34,7 +34,7 @@ export default function Contact() {
           <p className="text-gray-400 max-w-xl mx-auto text-sm">
             يمكنكم التواصل معنا عبر البريد أو الهاتف، ومتابعتنا على منصات التواصل الاجتماعي
           </p>
-          <div className="w-16 h-0.5 bg-djafa-red mx-auto" />
+
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-6">

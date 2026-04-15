@@ -20,7 +20,7 @@ export default function Gallery() {
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 mb-4">
             لحظات من <span className="text-djafa-yellow">الضيافة</span>
           </h2>
-          <div className="w-16 h-0.5 bg-djafa-red mx-auto" />
+
         </motion.div>
 
         <div className="grid grid-cols-3 grid-rows-2 gap-3 h-[500px]">
