@@ -5,37 +5,42 @@ const events = [
   {
     year: "1994",
     title: "البداية — شارع الصريم",
-    desc: "انطلقت رحلة الضيافة من قلب طرابلس. أول فرع يفتح أبوابه بوصفات سرية وطعم لا يُنسى.",
+    desc: "من شارع الصريم انطلقت الضيافة. هنا بدأت القصة، وهنا وُلد الطعم الذي لا يُنسى.",
     icon: "🏪",
     color: "from-djafa-yellow to-amber-500",
+    showYear: true,
   },
   {
-    year: "2000",
-    title: "التوسع — رأس حسن",
-    desc: "بعد 6 سنوات من النجاح، فتحنا فرع رأس حسن لتلبية الطلب المتزايد من عملائنا الكرام.",
+    year: "",
+    title: "فرع رأس حسن",
+    desc: "توسعنا نحو رأس حسن لنكون أقرب لعملائنا الكرام في هذه المنطقة.",
     icon: "📈",
     color: "from-djafa-red to-red-700",
+    showYear: false,
   },
   {
-    year: "2008",
-    title: "الانتشار — شارع الزاوية",
-    desc: "تعزيز حضورنا في طرابلس بفرع شارع الزاوية، وتوسيع دائرة الضيافة لتشمل مزيداً من الأحياء.",
+    year: "",
+    title: "فرع شارع الزاوية",
+    desc: "حضور جديد في شارع الزاوية، وتوسيع دائرة الضيافة لتشمل مزيداً من الأحياء.",
     icon: "🗺️",
     color: "from-djafa-yellow to-amber-500",
+    showYear: false,
   },
   {
-    year: "2015",
-    title: "الوصول — جنزور",
-    desc: "الضيافة تصل إلى جنزور. تجربة طعام أصيلة لعائلات المنطقة الغربية من طرابلس.",
+    year: "",
+    title: "فرع جنزور",
+    desc: "الضيافة تصل إلى جنزور، تجربة طعام أصيلة لعائلات المنطقة الغربية.",
     icon: "🌟",
     color: "from-djafa-red to-red-700",
+    showYear: false,
   },
   {
-    year: "2020",
-    title: "التجديد — عرادة",
-    desc: "أحدث فروعنا في عرادة يجمع بين الأصالة والعصرية، مع تطوير شامل لتجربة العملاء.",
+    year: "",
+    title: "فرع عرادة",
+    desc: "أحدث فروعنا في عرادة، يجمع بين الأصالة والعصرية مع تجربة عملاء متطورة.",
     icon: "🚀",
     color: "from-djafa-yellow to-amber-500",
+    showYear: false,
   },
 ];
 
@@ -57,7 +62,7 @@ export default function Timeline() {
             رحلة <span className="text-djafa-yellow">ثلاثة عقود</span>
           </h2>
           <p className="text-gray-400 text-sm max-w-md mx-auto">من فرع واحد إلى خمسة فروع تنتشر في أرجاء طرابلس</p>
-          <div className="w-16 h-0.5 bg-djafa-red mx-auto mt-4" />
+
         </motion.div>
 
         {/* Timeline */}
@@ -98,7 +103,10 @@ export default function Timeline() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                       className={`w-14 h-14 rounded-full bg-gradient-to-br ${event.color} flex items-center justify-center shadow-lg ring-4 ring-djafa-charcoal`}>
-                      <span className="text-djafa-black font-bold text-xs leading-tight text-center">{event.year}</span>
+                      {event.showYear
+                        ? <span className="text-djafa-black font-bold text-xs leading-tight text-center">{event.year}</span>
+                        : <span className="text-djafa-black text-xl">{event.icon}</span>
+                      }
                     </motion.div>
                   </div>
 

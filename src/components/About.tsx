@@ -49,7 +49,7 @@ export default function About() {
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-3 mb-4">
             أصالة المذاق منذ <span className="text-djafa-yellow">1994</span>
           </h2>
-          <div className="w-16 h-0.5 bg-djafa-red mx-auto" />
+
         </motion.div>
 
         {/* ── Story + Image ── */}
@@ -73,13 +73,13 @@ export default function About() {
               <div className="p-5 rounded-xl bg-white/3 border border-white/8">
                 <h4 className="text-djafa-yellow font-bold mb-2">👁 رؤيتنا</h4>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  أن نظل الخيار الأول والأكثر موثوقية للعائلات والشباب في ليبيا، من خلال الحفاظ على إرثنا العريق في الجودة مع التطوير المستمر لتقديم تجربة طعام عصرية تليق بكرم الضيافة الليبي الأصيل.
+                  أن نظل الوجهة الأولى لعشاق الدجاج المقلي عالي الجودة، من خلال الحفاظ على طعمنا الأصيل منذ عام 1994، وتقديم تجربة مميزة تُرضي جميع عملائنا.
                 </p>
               </div>
               <div className="p-5 rounded-xl bg-white/3 border border-white/8">
                 <h4 className="text-djafa-yellow font-bold mb-2">📌 رسالتنا</h4>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  تقديم وجبات لذيذة ومغذية — من الدجاج المقلي والبرجر إلى المشاوي — مُعدة بوصفاتنا الخاصة ومعايير جودة صارمة، مع ضمان خدمة سريعة وبيئة مرحبة تلبي تطلعات عملائنا في كل فرع من فروعنا.
+                  نسعى لتقديم منتجاتنا بجودة عالية وطعم أصيل، من خلال استخدام مكونات مختارة بعناية، وتقديم خدمة متميزة وتجربة فريدة تضمن رضا عملائنا في كل زيارة.
                 </p>
               </div>
             </div>
