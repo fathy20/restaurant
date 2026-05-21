@@ -5,7 +5,6 @@ import About from "./components/About";
 import Timeline from "./components/Timeline";
 import Menu from "./components/Menu";
 import Branches from "./components/Branches";
-import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import FeedbackModal from "./components/FeedbackModal";
 import Footer from "./components/Footer";
@@ -20,7 +19,6 @@ export default function App() {
       <Hero />
       <About />
       <Timeline />
-      <Gallery />
       <Menu />
       <Branches />
       <Contact />
