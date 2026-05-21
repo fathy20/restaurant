@@ -50,7 +50,7 @@ export default function Footer({ onFeedbackOpen }: FooterProps) {
                 </li>
               ))}
               <li>
-                <a href={`${import.meta.env.BASE_URL}حلويات_منزلية_بالشكولاتة.pdf`} target="_blank" rel="noopener noreferrer"
+                <a href={`${import.meta.env.BASE_URL}menu.pdf`} target="_blank" rel="noopener noreferrer"
                   className="text-gray-400 text-sm hover:text-djafa-yellow transition-colors">المنيو</a>
               </li>
             </ul>

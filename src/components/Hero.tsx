@@ -44,7 +44,7 @@ export default function Hero() {
           {/* Glassmorphism CTA box */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
             className="inline-flex flex-col sm:flex-row items-center justify-center gap-4 p-2 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl">
-            <a href={`${import.meta.env.BASE_URL}حلويات_منزلية_بالشكولاتة.pdf`} target="_blank" rel="noopener noreferrer"
+            <a href={`${import.meta.env.BASE_URL}menu.pdf`} target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 px-8 py-3.5 bg-djafa-yellow text-djafa-black font-bold rounded-xl hover:bg-yellow-300 transition-all duration-300 shadow-lg shadow-djafa-yellow/40 text-base">
               <FileText size={18} /> شاهد المنيو
             </a>

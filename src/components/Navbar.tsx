@@ -40,7 +40,7 @@ export default function Navbar({ onFeedbackOpen }: NavbarProps) {
               <span className="absolute -bottom-1 right-0 w-0 h-0.5 bg-djafa-yellow transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
-          <a href={`${import.meta.env.BASE_URL}حلويات_منزلية_بالشكولاتة.pdf`} target="_blank" rel="noopener noreferrer"
+          <a href={`${import.meta.env.BASE_URL}menu.pdf`} target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-djafa-yellow transition-colors tracking-wider group relative">
             <FileText size={15} />
             PDF
@@ -71,7 +71,7 @@ export default function Navbar({ onFeedbackOpen }: NavbarProps) {
                 {link.name}
               </a>
             ))}
-            <a href={`${import.meta.env.BASE_URL}حلويات_منزلية_بالشكولاتة.pdf`} target="_blank" rel="noopener noreferrer"
+            <a href={`${import.meta.env.BASE_URL}menu.pdf`} target="_blank" rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
               className="flex items-center gap-2 text-lg font-medium text-gray-300 hover:text-djafa-yellow transition-colors">
               <FileText size={18} /> PDF

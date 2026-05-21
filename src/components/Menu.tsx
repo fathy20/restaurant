@@ -27,7 +27,7 @@ export default function Menu() {
           className="w-full max-w-5xl mx-auto h-[600px] md:h-[800px] border border-white/10 rounded-2xl overflow-hidden shadow-2xl relative bg-white/5 mb-10"
         >
           <iframe 
-            src="/menu.pdf" 
+            src={`${import.meta.env.BASE_URL}menu.pdf`} 
             className="w-full h-full border-none"
             title="Menu PDF"
           />
@@ -36,11 +36,11 @@ export default function Menu() {
         {/* PDF CTA */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/menu.pdf" target="_blank" rel="noopener noreferrer"
+          <a href={`${import.meta.env.BASE_URL}menu.pdf`} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-djafa-yellow text-djafa-yellow font-bold rounded-xl hover:bg-djafa-yellow hover:text-djafa-black transition-all duration-300">
             <FileText size={18} /> عرض المنيو بحجم الشاشة
           </a>
-          <a href="/menu.pdf" download="قائمة_طعام_الضيافة.pdf"
+          <a href={`${import.meta.env.BASE_URL}menu.pdf`} download="قائمة_طعام_الضيافة.pdf"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-white/5 border border-white/15 text-gray-300 font-bold rounded-xl hover:border-white/30 hover:text-white transition-all duration-300">
             <Download size={18} /> تحميل المنيو (PDF)
           </a>
