@@ -28,27 +28,27 @@ const categories: Category[] = [
 
 const products: Product[] = [
   // Burgers
-  { id: 'b1', name: 'برجر لحم', description: 'برجر لحم مشوي على اللهب مع الإضافات الطازجة.', category: 'burgers', image: '/menu/برجر لحم.png' },
-  { id: 'b2', name: 'همبورجة دجاج', description: 'برجر دجاج مقرمش ولذيذ.', category: 'burgers', image: '/menu/همبورجة دجاج.png' },
+  { id: 'b1', name: 'برجر لحم', description: 'برجر لحم مشوي على اللهب مع الإضافات الطازجة.', category: 'burgers', image: '/menu/burger-meat.png' },
+  { id: 'b2', name: 'همبورجة دجاج', description: 'برجر دجاج مقرمش ولذيذ.', category: 'burgers', image: '/menu/burger-chicken.png' },
 
   // Sandwiches
-  { id: 's1', name: 'تشكن بانية', description: 'ساندوتش دجاج بانية مقرمش مع الصوص الخاص.', category: 'sandwiches', image: '/menu/تشكن بانية.png' },
-  { id: 's2', name: 'سكالوب مشوي', description: 'ساندوتش سكالوب مشوي صحي وخفيف.', category: 'sandwiches', image: '/menu/سكالوب مشوي.png' },
-  { id: 's3', name: 'سكالوب مقلي', description: 'ساندوتش سكالوب مقلي ذهبي ومقرمش.', category: 'sandwiches', image: '/menu/سكالوب مقلي.png' },
-  { id: 's4', name: 'سندوتش زنجر حار', description: 'لعشاق الطعم الحار، زنجر دجاج مقرمش.', category: 'sandwiches', image: '/menu/سندوتش زنجر حار.png', badge: 'حار 🌶️' },
-  { id: 's5', name: 'سندوتش شاورما', description: 'شاورما لذيذة مع التتبيلة الخاصة.', category: 'sandwiches', image: '/menu/سندوتش شاورما.png' },
-  { id: 's6', name: 'سندوتش شيش طاووق', description: 'شيش طاووق مشوي على الفحم.', category: 'sandwiches', image: '/menu/سندوتش شيش طاووق.png' },
-  { id: 's7', name: 'سندوتش فيتو', description: 'ساندوتش فيتو المميز.', category: 'sandwiches', image: '/menu/سندوتش فيتو.png' },
-  { id: 's8', name: 'سندوتش كباب لحم', description: 'كباب لحم بلدي طازج ومشوي.', category: 'sandwiches', image: '/menu/سندوتش كباب لحم.png' },
-  { id: 's9', name: 'سندوتش كرسبي', description: 'دجاج كرسبي مع صوص الجبنة.', category: 'sandwiches', image: '/menu/سندوتش كرسبي.png' },
+  { id: 's1', name: 'تشكن بانية', description: 'ساندوتش دجاج بانية مقرمش مع الصوص الخاص.', category: 'sandwiches', image: '/menu/chicken-pane.png' },
+  { id: 's2', name: 'سكالوب مشوي', description: 'ساندوتش سكالوب مشوي صحي وخفيف.', category: 'sandwiches', image: '/menu/sandwich-escalope-grilled.png' },
+  { id: 's3', name: 'سكالوب مقلي', description: 'ساندوتش سكالوب مقلي ذهبي ومقرمش.', category: 'sandwiches', image: '/menu/sandwich-escalope-fried.png' },
+  { id: 's4', name: 'سندوتش زنجر حار', description: 'لعشاق الطعم الحار، زنجر دجاج مقرمش.', category: 'sandwiches', image: '/menu/sandwich-zinger-spicy.png', badge: 'حار 🌶️' },
+  { id: 's5', name: 'سندوتش شاورما', description: 'شاورما لذيذة مع التتبيلة الخاصة.', category: 'sandwiches', image: '/menu/sandwich-shawarma.png' },
+  { id: 's6', name: 'سندوتش شيش طاووق', description: 'شيش طاووق مشوي على الفحم.', category: 'sandwiches', image: '/menu/sandwich-shish-tawook.png' },
+  { id: 's7', name: 'سندوتش فيتو', description: 'ساندوتش فيتو المميز.', category: 'sandwiches', image: '/menu/sandwich-fito.png' },
+  { id: 's8', name: 'سندوتش كباب لحم', description: 'كباب لحم بلدي طازج ومشوي.', category: 'sandwiches', image: '/menu/sandwich-kebab-meat.png' },
+  { id: 's9', name: 'سندوتش كرسبي', description: 'دجاج كرسبي مع صوص الجبنة.', category: 'sandwiches', image: '/menu/sandwich-crispy.png' },
 
   // Meals
-  { id: 'm1', name: 'وجبة سكالوب مشوي', description: 'وجبة متكاملة مع السكالوب المشوي والصوص.', category: 'meals', image: '/menu/وجبة سكالوب مشوي.png' },
-  { id: 'm2', name: 'وجبة سكالوب مقلي', description: 'وجبة متكاملة مع السكالوب المقلي والبطاطس المقرمشة.', category: 'meals', image: '/menu/وجبة سكالوب مقلي.png' },
-  { id: 'm3', name: 'وجبة شاورما', description: 'وجبة شاورما عربي مع البطاطس والمثومة.', category: 'meals', image: '/menu/وجبة شاورما.png' },
-  { id: 'm4', name: 'وجبة فيتو', description: 'وجبة فيتو المميزة والشهية.', category: 'meals', image: '/menu/وجبة فيتو.png' },
-  { id: 'm5', name: 'وجبة كرسبي', description: 'قطع دجاج كرسبي مع البطاطس والصلصة.', category: 'meals', image: '/menu/وجبة كرسبي.png' },
-  { id: 'm6', name: 'وجبة نص دجاجة', description: 'نصف دجاجة مع الأرز والصلصة الخاصة.', category: 'meals', image: '/menu/وجبة نص دجاجة.png' },
+  { id: 'm1', name: 'وجبة سكالوب مشوي', description: 'وجبة متكاملة مع السكالوب المشوي والصوص.', category: 'meals', image: '/menu/meal-escalope-grilled.png' },
+  { id: 'm2', name: 'وجبة سكالوب مقلي', description: 'وجبة متكاملة مع السكالوب المقلي والبطاطس المقرمشة.', category: 'meals', image: '/menu/meal-escalope-fried.png' },
+  { id: 'm3', name: 'وجبة شاورما', description: 'وجبة شاورما عربي مع البطاطس والمثومة.', category: 'meals', image: '/menu/meal-shawarma.png' },
+  { id: 'm4', name: 'وجبة فيتو', description: 'وجبة فيتو المميزة والشهية.', category: 'meals', image: '/menu/meal-fito.png' },
+  { id: 'm5', name: 'وجبة كرسبي', description: 'قطع دجاج كرسبي مع البطاطس والصلصة.', category: 'meals', image: '/menu/meal-crispy.png' },
+  { id: 'm6', name: 'وجبة نص دجاجة', description: 'نصف دجاجة مع الأرز والصلصة الخاصة.', category: 'meals', image: '/menu/meal-half-chicken.png' },
 ];
 
 export default function Menu() {

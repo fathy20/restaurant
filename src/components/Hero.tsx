@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-import { FileText, Phone } from "lucide-react";
+import { FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -31,11 +32,6 @@ export default function Hero() {
             مطعم <span className="text-djafa-yellow" style={{ textShadow: "0 0 30px rgba(255,215,0,0.4)" }}>الضيافة</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/90 mb-4 font-light"
-            style={{ textShadow: "0 2px 10px rgba(0,0,0,0.7)" }}>
-            وجهتك الأولى لأفضل مشويات وأكل بيتي
-          </p>
-
           <p className="text-base md:text-lg text-white/70 mb-10 leading-relaxed max-w-2xl mx-auto"
             style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}>
             من قلب طرابلس، نقدم لكم تجربة طعام أصيلة تجمع بين الجودة العالية والطعم الذي لا يُنسى منذ أكثر من ثلاثة عقود
@@ -44,14 +40,10 @@ export default function Hero() {
           {/* Glassmorphism CTA box */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
             className="inline-flex flex-col sm:flex-row items-center justify-center gap-4 p-2 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl">
-            <a href="#menu"
+            <Link to="/menu"
               className="flex items-center gap-2 px-8 py-3.5 bg-djafa-yellow text-djafa-black font-bold rounded-xl hover:bg-yellow-300 transition-all duration-300 shadow-lg shadow-djafa-yellow/40 text-base">
               <FileText size={18} /> شاهد المنيو
-            </a>
-            <a href="tel:+218910000000"
-              className="flex items-center gap-2 px-8 py-3.5 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 hover:border-djafa-yellow/50 transition-all duration-300 text-base">
-              <Phone size={18} /> اتصل بنا
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

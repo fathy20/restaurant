@@ -1,4 +1,5 @@
-import { Facebook, Instagram, Mail, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const TikTokIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -50,8 +51,8 @@ export default function Footer({ onFeedbackOpen }: FooterProps) {
                 </li>
               ))}
               <li>
-                <a href={`${import.meta.env.BASE_URL}menu.pdf`} target="_blank" rel="noopener noreferrer"
-                  className="text-gray-400 text-sm hover:text-djafa-yellow transition-colors">المنيو</a>
+                <Link to="/menu"
+                  className="text-gray-400 text-sm hover:text-djafa-yellow transition-colors">المنيو</Link>
               </li>
             </ul>
           </div>
@@ -60,11 +61,8 @@ export default function Footer({ onFeedbackOpen }: FooterProps) {
           <div>
             <h4 className="text-djafa-yellow text-sm font-bold mb-4 tracking-wider">تواصل معنا</h4>
             <div className="space-y-3 mb-5">
-              <a href="mailto:info@aldiyafa.ly" className="flex items-center gap-2 text-gray-400 text-sm hover:text-djafa-yellow transition-colors">
-                <Mail size={14} /> info@aldiyafa.ly
-              </a>
-              <a href="tel:+218910000000" className="flex items-center gap-2 text-gray-400 text-sm hover:text-djafa-yellow transition-colors" dir="ltr">
-                <Phone size={14} /> +218 91 000 0000
+              <a href="mailto:INFO@ALDYAFA.LY" className="flex items-center gap-2 text-gray-400 text-sm hover:text-djafa-yellow transition-colors">
+                <Mail size={14} /> INFO@ALDYAFA.LY
               </a>
             </div>
             <button onClick={onFeedbackOpen}
