@@ -148,17 +148,7 @@ export default function Branches() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-djafa-yellow/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Phone size={15} className="text-djafa-yellow" />
-                      </div>
-                      <div>
-                        <p className="text-gray-500 text-xs mb-0.5">رقم الهاتف</p>
-                        <a href={`tel:${branch.phone}`} className="text-white text-sm hover:text-djafa-yellow transition-colors" dir="ltr">
-                          {branch.phone}
-                        </a>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
 
@@ -193,18 +183,7 @@ export default function Branches() {
           </motion.div>
         </AnimatePresence>
 
-        {/* All branches mini list */}
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-5 gap-3">
-          {branches.map((b, i) => (
-            <button key={i} onClick={() => { setSelected(i); setMapLoaded(false); }}
-              className={`p-3 rounded-xl border text-center transition-all duration-300 ${
-                selected === i ? "border-djafa-yellow bg-djafa-yellow/8" : "border-white/6 bg-white/2 hover:border-white/15"
-              }`}>
-              <span className="block text-djafa-yellow font-bold text-sm">{b.since}</span>
-              <span className="block text-gray-400 text-xs mt-0.5">{b.name.replace("فرع ", "")}</span>
-            </button>
-          ))}
-        </div>
+
       </div>
     </section>
   );
