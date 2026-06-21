@@ -22,8 +22,25 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    const formData = new FormData(e.currentTarget);
+    const text = `*ملاحظة جديدة*
+نوع الطلب: ${orderType === 'delivery' ? 'توصيل' : 'استلام'}
+البريد الإلكتروني: ${formData.get('email')}
+اسم العميل: ${formData.get('name')}
+المدينة: ${formData.get('city')}
+رقم الهاتف: ${formData.get('phone')}
+رقم الفاتورة: ${formData.get('invoice') || 'لا يوجد'}
+
+الملاحظة:
+${formData.get('message')}
+`;
+
+    const waLink = `https://wa.me/218910000000?text=${encodeURIComponent(text)}`;
+    window.open(waLink, '_blank');
+
     setSubmitted(true);
     setTimeout(() => { setSubmitted(false); onClose(); }, 2500);
   };
@@ -81,17 +98,17 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
                   { name: "phone", type: "tel", placeholder: "رقم الهاتف", required: true },
                   { name: "invoice", type: "text", placeholder: "رقم الفاتورة (اختياري)", required: false },
                 ].map((field) => (
-                  <input key={field.name} type={field.type} placeholder={field.placeholder} required={field.required}
+                  <input key={field.name} name={field.name} type={field.type} placeholder={field.placeholder} required={field.required}
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-djafa-yellow/50 focus:bg-white/8 transition-all text-sm" />
                 ))}
 
                 {/* Message */}
-                <textarea placeholder="اكتب ملاحظتك هنا..." rows={4} required
+                <textarea name="message" placeholder="اكتب ملاحظتك هنا..." rows={4} required
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-djafa-yellow/50 focus:bg-white/8 transition-all resize-none text-sm" />
 
                 {/* Image upload */}
                 <div>
-                  <label className="text-gray-300 text-sm font-medium mb-2 block">إرفاق صورة (اختياري)</label>
+                  <label className="text-gray-300 text-sm font-medium mb-2 block">إرفاق صورة (اختياري) - <span className="text-xs text-gray-500">سيُطلب منك إرسالها في الواتساب</span></label>
                   <div onClick={() => fileRef.current?.click()}
                     className="border-2 border-dashed border-white/15 rounded-xl p-4 text-center cursor-pointer hover:border-djafa-yellow/40 transition-colors">
                     {imagePreview ? (
