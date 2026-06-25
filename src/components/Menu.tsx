@@ -13,7 +13,7 @@ type Category = {
 type Product = {
   id: string;
   name: string;
-  description: string;
+  description?: string;
   category: string;
   image: string;
   badge?: string;
@@ -22,33 +22,35 @@ type Product = {
 // Data
 const categories: Category[] = [
   { id: 'meals', name: 'الوجبات', icon: <ShoppingCart size={28} />, color: 'bg-djafa-red/20 text-djafa-red border-djafa-red/30' },
+  { id: 'boxes', name: 'البوكسات', icon: <Star size={28} />, color: 'bg-white/10 text-white border-white/20' },
   { id: 'sandwiches', name: 'السندويتشات', icon: <Flame size={28} />, color: 'bg-djafa-yellow/20 text-djafa-yellow border-djafa-yellow/30' },
-  { id: 'burgers', name: 'البرجر', icon: <Star size={28} />, color: 'bg-white/10 text-white border-white/20' },
 ];
 
 const products: Product[] = [
-  // Burgers
-  { id: 'b1', name: 'برجر لحم', description: 'برجر لحم مشوي على اللهب مع الإضافات الطازجة.', category: 'burgers', image: '/menu/burger-meat.png' },
-  { id: 'b2', name: 'برجر دجاج', description: 'برجر دجاج مقرمش ولذيذ.', category: 'burgers', image: '/menu/burger-chicken.png' },
-
-  // Sandwiches
-  { id: 's1', name: 'كرسبي الرهيب', description: 'ساندوتش دجاج بانية مقرمش مع الصوص الخاص.', category: 'sandwiches', image: '/menu/chicken-pane.png' },
-  { id: 's2', name: 'سندوتش فيتو', description: 'ساندوتش سكالوب مشوي صحي وخفيف.', category: 'sandwiches', image: '/menu/sandwich-escalope-grilled.png' },
-  { id: 's3', name: 'اسكالوب دجاج', description: 'ساندوتش سكالوب مقلي ذهبي ومقرمش.', category: 'sandwiches', image: '/menu/sandwich-escalope-fried.png' },
-  { id: 's4', name: 'سندوتش زنجر حار', description: 'لعشاق الطعم الحار، زنجر دجاج مقرمش.', category: 'sandwiches', image: '/menu/sandwich-zinger-spicy.png', badge: 'حار 🌶️' },
-  { id: 's5', name: 'سندوتش شاورما', description: 'شاورما لذيذة مع التتبيلة الخاصة.', category: 'sandwiches', image: '/menu/sandwich-shawarma.png' },
-  { id: 's6', name: 'سندوتش شيش طاووق', description: 'شيش طاووق مشوي على الفحم.', category: 'sandwiches', image: '/menu/sandwich-shish-tawook.png' },
-  { id: 's7', name: 'سندوتش فيتو', description: 'ساندوتش فيتو المميز.', category: 'sandwiches', image: '/menu/sandwich-fito.png' },
-  { id: 's8', name: 'سندوتش كباب لحم', description: 'كباب لحم بلدي طازج ومشوي.', category: 'sandwiches', image: '/menu/sandwich-kebab-meat.png' },
-  { id: 's9', name: 'سندوتش كرسبي', description: 'دجاج كرسبي مع صوص الجبنة.', category: 'sandwiches', image: '/menu/sandwich-crispy.png' },
+  // Boxes
+  { id: 'bx1', name: 'بوكس شاورما صغير', category: 'boxes', image: '/menu/بوكس شاورما صغير.png' },
+  { id: 'bx2', name: 'بوكس شاورما كبير', category: 'boxes', image: '/menu/بوكس شاورما كبير.png' },
 
   // Meals
-  { id: 'm1', name: 'وجبة سكالوب مشوي', description: 'وجبة متكاملة مع السكالوب المشوي والصوص.', category: 'meals', image: '/menu/meal-escalope-grilled.png' },
-  { id: 'm2', name: 'وجبة سكالوب مقلي', description: 'وجبة متكاملة مع السكالوب المقلي والبطاطس المقرمشة.', category: 'meals', image: '/menu/meal-escalope-fried.png' },
-  { id: 'm3', name: 'وجبة شاورما', description: 'وجبة شاورما عربي مع البطاطس والمثومة.', category: 'meals', image: '/menu/meal-shawarma.png' },
-  { id: 'm4', name: 'وجبة فيتو', description: 'وجبة فيتو المميزة والشهية.', category: 'meals', image: '/menu/meal-fito.png' },
-  { id: 'm5', name: 'وجبة كرسبي', description: 'قطع دجاج كرسبي مع البطاطس والصلصة.', category: 'meals', image: '/menu/meal-crispy.png' },
-  { id: 'm6', name: 'وجبة نص دجاجة', description: 'نصف دجاجة مع الأرز والصلصة الخاصة.', category: 'meals', image: '/menu/meal-half-chicken.png' },
+  { id: 'm1', name: 'وجبة اسكالوب مشوي', category: 'meals', image: '/menu/وجبة اسكالوب مشوي.png' },
+  { id: 'm2', name: 'وجبة اسكالوب مقلي', category: 'meals', image: '/menu/وجبة اسكالوب مقلي.png' },
+  { id: 'm3', name: 'وجبة شاورما', category: 'meals', image: '/menu/وجبة شاورما.png' },
+  { id: 'm4', name: 'وجبة شيش طاووق', category: 'meals', image: '/menu/وجبة شيش طاووق.png' },
+  { id: 'm5', name: 'وجبة فيتو', category: 'meals', image: '/menu/وجبة فيتو.png' },
+  { id: 'm6', name: 'وجبة كريسبي الرهيب', category: 'meals', image: '/menu/وجبة كريسبي الرهيب.png' },
+  { id: 'm7', name: 'وجبة نص دجاجة', category: 'meals', image: '/menu/وجبة نص دجاجة.png' },
+
+  // Sandwiches
+  { id: 's1', name: 'كباب', category: 'sandwiches', image: '/menu/sandwich-kebab-meat.png' },
+  { id: 's2', name: 'اسكالوب دجاج', category: 'sandwiches', image: '/menu/sandwich-escalope-fried.png' },
+  { id: 's3', name: 'سندوتش فيتو', category: 'sandwiches', image: '/menu/sandwich-escalope-grilled.png' },
+  { id: 's4', name: 'كرسبي الرهيب', category: 'sandwiches', image: '/menu/تشكن بانيه.png' },
+  { id: 's5', name: 'برجر دجاج', category: 'sandwiches', image: '/menu/burger-chicken.png' },
+  { id: 's6', name: 'سندوتش شاورما', category: 'sandwiches', image: '/menu/سندوتش شاورما.png' },
+  { id: 's7', name: 'سندوتش شيش طاووق', category: 'sandwiches', image: '/menu/sandwich-shish-tawook.png' },
+  { id: 's8', name: 'سندوتش زنجر حار', category: 'sandwiches', image: '/menu/sandwich-zinger-spicy.png', badge: 'حار 🌶️' },
+  { id: 's9', name: 'برجر لحم', category: 'sandwiches', image: '/menu/burger-meat.png' },
+  { id: 's10', name: 'سندوتش كرسبي', category: 'sandwiches', image: '/menu/sandwich-crispy.png' },
 ];
 
 export default function Menu() {
@@ -106,7 +108,7 @@ export default function Menu() {
         </div>
 
         {/* Products List */}
-        <div className="mt-8 flex flex-col gap-6">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="popLayout">
             {filteredProducts.map((product, index) => (
               <motion.div
@@ -116,11 +118,11 @@ export default function Menu() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: -20 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-djafa-yellow/30 hover:bg-white/10 transition-all duration-500 group"
+                className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-djafa-yellow/30 hover:bg-white/10 transition-all duration-500 group flex flex-col h-full"
               >
-                <div className="flex flex-col sm:flex-row items-center p-4 sm:p-6 gap-6">
+                <div className="flex flex-col p-4 sm:p-5 gap-4 h-full">
                   {/* Product Image */}
-                  <div className="w-full sm:w-48 h-48 sm:h-36 shrink-0 rounded-2xl overflow-hidden relative">
+                  <div className="w-full h-56 shrink-0 rounded-2xl overflow-hidden relative">
                     <img
                       src={`${import.meta.env.BASE_URL}${product.image.startsWith('/') ? product.image.slice(1) : product.image}`}
                       alt={product.name}
@@ -135,11 +137,13 @@ export default function Menu() {
                   </div>
 
                   {/* Product Content */}
-                  <div className="flex-1 flex flex-col justify-center text-center sm:text-right w-full">
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-djafa-yellow transition-colors">{product.name}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-6 sm:mb-4 line-clamp-3">
-                      {product.description}
-                    </p>
+                  <div className="flex-1 flex flex-col justify-center text-center w-full">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-djafa-yellow transition-colors">{product.name}</h3>
+                    {product.description && (
+                      <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
+                        {product.description}
+                      </p>
+                    )}
 
                     <div className="flex items-center justify-between mt-auto">
                     </div>
