@@ -48,9 +48,7 @@ const products: Product[] = [
   { id: 's5', name: 'برجر دجاج', category: 'sandwiches', image: '/menu/burger-chicken.png' },
   { id: 's6', name: 'سندوتش شاورما', category: 'sandwiches', image: '/menu/سندوتش شاورما.png' },
   { id: 's7', name: 'سندوتش شيش طاووق', category: 'sandwiches', image: '/menu/sandwich-shish-tawook.png' },
-  { id: 's8', name: 'سندوتش زنجر حار', category: 'sandwiches', image: '/menu/sandwich-zinger-spicy.png', badge: 'حار 🌶️' },
   { id: 's9', name: 'برجر لحم', category: 'sandwiches', image: '/menu/burger-meat.png' },
-  { id: 's10', name: 'سندوتش كرسبي', category: 'sandwiches', image: '/menu/sandwich-crispy.png' },
 ];
 
 export default function Menu() {
