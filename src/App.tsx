@@ -47,7 +47,7 @@ export default function App() {
   const [feedbackOpen, setFeedbackOpen] = useState(false);
 
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router>
       <ScrollToHash />
       <div className="min-h-screen bg-djafa-black text-white selection:bg-djafa-yellow selection:text-djafa-black">
         <Navbar onFeedbackOpen={() => setFeedbackOpen(true)} />
