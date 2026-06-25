@@ -108,61 +108,62 @@ export default function Menu() {
         </div>
 
         {/* Products List */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <AnimatePresence mode="popLayout">
-            {filteredProducts.map((product, index) => (
-              <motion.div
-                key={product.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: -20 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-djafa-yellow/30 hover:bg-white/10 transition-all duration-500 group flex flex-col h-full"
-              >
-                <div className="flex flex-col p-4 sm:p-5 gap-4 h-full">
-                  {/* Product Image */}
-                  <div className="w-full h-56 shrink-0 rounded-2xl overflow-hidden relative">
-                    <img
-                      src={`${import.meta.env.BASE_URL}${product.image.startsWith('/') ? product.image.slice(1) : product.image}`}
-                      alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    {/* Floating Badge */}
-                    {product.badge && (
-                      <div className="absolute bottom-2 right-2 bg-white/90 backdrop-blur-sm text-djafa-black text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-lg">
-                        {product.badge}
+        <div className="mt-8">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className={filteredProducts.length > 0 ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" : ""}
+            >
+              {filteredProducts.length > 0 ? (
+                filteredProducts.map((product) => (
+                  <div
+                    key={product.id}
+                    className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-djafa-yellow/30 hover:bg-white/10 transition-all duration-500 group flex flex-col h-full"
+                  >
+                    <div className="flex flex-col p-4 sm:p-5 gap-4 h-full">
+                      {/* Product Image */}
+                      <div className="w-full h-56 shrink-0 rounded-2xl overflow-hidden relative">
+                        <img
+                          src={`${import.meta.env.BASE_URL}${product.image.startsWith('/') ? product.image.slice(1) : product.image}`}
+                          alt={product.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        {/* Floating Badge */}
+                        {product.badge && (
+                          <div className="absolute bottom-2 right-2 bg-white/90 backdrop-blur-sm text-djafa-black text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-lg">
+                            {product.badge}
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
 
-                  {/* Product Content */}
-                  <div className="flex-1 flex flex-col justify-center text-center w-full">
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-djafa-yellow transition-colors">{product.name}</h3>
-                    {product.description && (
-                      <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
-                        {product.description}
-                      </p>
-                    )}
+                      {/* Product Content */}
+                      <div className="flex-1 flex flex-col justify-center text-center w-full">
+                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-djafa-yellow transition-colors">{product.name}</h3>
+                        {product.description && (
+                          <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
+                            {product.description}
+                          </p>
+                        )}
 
-                    <div className="flex items-center justify-between mt-auto">
+                        <div className="flex items-center justify-between mt-auto">
+                        </div>
+                      </div>
                     </div>
                   </div>
+                ))
+              ) : (
+                <div className="text-center py-20 bg-white/5 border border-white/10 rounded-3xl w-full">
+                  <Clock size={48} className="mx-auto text-gray-500 mb-4" />
+                  <h3 className="text-xl font-bold text-white mb-2">لا توجد منتجات حالياً</h3>
+                  <p className="text-gray-400">سيتم إضافة منتجات جديدة قريباً في هذا القسم.</p>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-
-          {filteredProducts.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-              className="text-center py-20 bg-white/5 border border-white/10 rounded-3xl"
-            >
-              <Clock size={48} className="mx-auto text-gray-500 mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">لا توجد منتجات حالياً</h3>
-              <p className="text-gray-400">سيتم إضافة منتجات جديدة قريباً في هذا القسم.</p>
+              )}
             </motion.div>
-          )}
+          </AnimatePresence>
         </div>
 
         {/* WhatsApp CTA */}
