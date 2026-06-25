@@ -68,25 +68,25 @@ export default function Timeline() {
         {/* Timeline */}
         <div className="relative">
           {/* Animated vertical line */}
-          <div className="absolute right-1/2 translate-x-1/2 top-0 bottom-0 w-0.5 bg-white/5 rounded-full" />
+          <div className="absolute right-[28px] md:right-1/2 md:translate-x-1/2 top-0 bottom-0 w-0.5 bg-white/5 rounded-full" />
           <motion.div
-            className="absolute right-1/2 translate-x-1/2 top-0 w-0.5 bg-gradient-to-b from-djafa-yellow via-djafa-red to-djafa-yellow rounded-full origin-top"
+            className="absolute right-[28px] md:right-1/2 md:translate-x-1/2 top-0 w-0.5 bg-gradient-to-b from-djafa-yellow via-djafa-red to-djafa-yellow rounded-full origin-top"
             style={{ height: lineHeight }}
           />
 
-          <div className="space-y-16">
+          <div className="space-y-12 md:space-y-16">
             {events.map((event, i) => {
               const isRight = i % 2 === 0;
               return (
                 <motion.div key={event.title}
-                  initial={{ opacity: 0, x: isRight ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.7, ease: "easeOut" }}
-                  className="relative grid grid-cols-[1fr_auto_1fr] items-center gap-6">
+                  className="relative flex md:grid md:grid-cols-[1fr_auto_1fr] items-start md:items-center gap-4 md:gap-6">
 
-                  {/* Left side */}
-                  <div className={isRight ? "text-left" : ""}>
+                  {/* Desktop Left side */}
+                  <div className={`hidden md:block ${isRight ? "text-left" : ""}`}>
                     {isRight && (
                       <div className="bg-white/3 border border-white/8 hover:border-djafa-yellow/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group max-w-xs mr-auto">
                         <span className="text-3xl mb-3 block">{event.icon}</span>
@@ -97,21 +97,21 @@ export default function Timeline() {
                   </div>
 
                   {/* Center dot + year */}
-                  <div className="flex flex-col items-center gap-2 z-10">
+                  <div className="flex flex-col items-center gap-2 z-10 shrink-0 mt-1 md:mt-0 relative right-2 md:right-0">
                     <motion.div
                       whileInView={{ scale: [0, 1.2, 1] }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.2 }}
-                      className={`w-14 h-14 rounded-full bg-gradient-to-br ${event.color} flex items-center justify-center shadow-lg ring-4 ring-djafa-charcoal`}>
+                      className={`w-10 h-10 md:w-14 md:h-14 rounded-full bg-gradient-to-br ${event.color} flex items-center justify-center shadow-lg ring-4 ring-djafa-charcoal`}>
                       {event.showYear
-                        ? <span className="text-djafa-black font-bold text-xs leading-tight text-center">{event.year}</span>
-                        : <span className="text-djafa-black text-xl">{event.icon}</span>
+                        ? <span className="text-djafa-black font-bold text-[10px] md:text-xs leading-tight text-center">{event.year}</span>
+                        : <span className="text-djafa-black text-lg md:text-xl">{event.icon}</span>
                       }
                     </motion.div>
                   </div>
 
-                  {/* Right side */}
-                  <div className={!isRight ? "text-right" : ""}>
+                  {/* Desktop Right side */}
+                  <div className={`hidden md:block ${!isRight ? "text-right" : ""}`}>
                     {!isRight && (
                       <div className="bg-white/3 border border-white/8 hover:border-djafa-yellow/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group max-w-xs ml-auto">
                         <span className="text-3xl mb-3 block">{event.icon}</span>
@@ -120,6 +120,16 @@ export default function Timeline() {
                       </div>
                     )}
                   </div>
+
+                  {/* Mobile Content */}
+                  <div className="md:hidden flex-1 pl-2 pb-4">
+                    <div className="bg-white/3 border border-white/8 hover:border-djafa-yellow/40 rounded-2xl p-5 transition-all duration-300">
+                      <span className="text-2xl mb-2 block text-right">{event.icon}</span>
+                      <h3 className="text-white font-bold text-base mb-2 text-right">{event.title}</h3>
+                      <p className="text-gray-400 text-xs leading-relaxed text-right">{event.desc}</p>
+                    </div>
+                  </div>
+
                 </motion.div>
               );
             })}
@@ -128,7 +138,7 @@ export default function Timeline() {
 
         {/* Bottom stat */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="mt-20 grid grid-cols-3 gap-6 text-center">
+          className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 text-center">
           {[
             { num: "+30", label: "سنة من التميز" },
             { num: "5", label: "فروع في طرابلس" },

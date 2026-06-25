@@ -15,14 +15,14 @@ export default function Footer({ onFeedbackOpen }: FooterProps) {
   return (
     <footer className="bg-djafa-charcoal border-t border-white/6 pt-14 pb-8">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 text-center md:text-right">
           {/* Brand */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <img src={`${import.meta.env.BASE_URL}logo.png`} alt="مطعم الضيافة" className="h-14 w-auto object-contain mb-4" />
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
               أصالة المذاق منذ 1994. نقدم أفضل المشويات والوجبات السريعة في طرابلس، ليبيا.
             </p>
-            <div className="flex items-center gap-3 mt-5">
+            <div className="flex items-center justify-center md:justify-start gap-3 mt-5">
               {[
                 { icon: Facebook, href: "https://www.facebook.com/share/17ge5mGFTU/?mibextid=wwXIfr", label: "Facebook" },
                 { icon: Instagram, href: "https://www.instagram.com/aldyafa.ly?igsh=bGlmbDZienFid3po", label: "Instagram" },
@@ -60,15 +60,17 @@ export default function Footer({ onFeedbackOpen }: FooterProps) {
           {/* Contact + Feedback */}
           <div>
             <h4 className="text-djafa-yellow text-sm font-bold mb-4 tracking-wider">تواصل معنا</h4>
-            <div className="space-y-3 mb-5">
-              <a href="mailto:INFO@ALDYAFA.LY" className="flex items-center gap-2 text-gray-400 text-sm hover:text-djafa-yellow transition-colors">
+            <div className="flex flex-col items-center md:items-start space-y-3 mb-5">
+              <a href="mailto:INFO@ALDYAFA.LY" className="flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm hover:text-djafa-yellow transition-colors">
                 <Mail size={14} /> INFO@ALDYAFA.LY
               </a>
             </div>
-            <button onClick={onFeedbackOpen}
-              className="flex items-center gap-2 px-4 py-2.5 border border-djafa-yellow/40 text-djafa-yellow text-sm font-semibold rounded-lg hover:bg-djafa-yellow hover:text-djafa-black transition-all duration-300">
-              💬 أضف ملاحظتك
-            </button>
+            <div className="flex justify-center md:justify-start">
+              <button onClick={onFeedbackOpen}
+                className="flex items-center justify-center gap-2 px-6 py-2.5 border border-djafa-yellow/40 text-djafa-yellow text-sm font-semibold rounded-lg hover:bg-djafa-yellow hover:text-djafa-black transition-all duration-300 w-full sm:w-auto">
+                💬 أضف ملاحظتك
+              </button>
+            </div>
           </div>
         </div>
 

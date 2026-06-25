@@ -23,7 +23,7 @@ export default function Gallery() {
 
         </motion.div>
 
-        <div className="grid grid-cols-3 grid-rows-2 gap-3 h-[500px]">
+        <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-4 md:grid-rows-2 gap-2 md:gap-3 h-[600px] md:h-[500px]">
           {photos.map((photo, i) => (
             <motion.div key={i} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }} transition={{ delay: i * 0.1 }}
